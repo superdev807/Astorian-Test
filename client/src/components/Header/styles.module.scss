@@ -1,16 +1,20 @@
-@import "styles/mixins.scss";
-@import "styles/variables.scss";
+@import "src/styles/mixins.scss";
+@import "src/styles/variables.scss";
 
 .headerWrapper {
+  box-sizing: border-box;
   position: absolute;
   top: 0px;
-  left: 0px;
   width: 100%;
   height: 46px;
   z-index: 10;
   display: flex;
-  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  box-shadow: 0px 2px 12px rgba(97, 97, 97, 0.11);
+  padding-left: 16px;
   @include respond-to("sm") {
     height: 67px;
+    padding-left: 32px;
   }
 }

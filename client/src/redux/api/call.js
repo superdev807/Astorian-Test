@@ -51,7 +51,7 @@ export default ({
       }
 
       const finalHeaders = {
-        ...defaultHeaders(token),
+        ...defaultHeaders(),
         ...headers,
         ...(customHeaders ? customHeaders : {}),
       };
@@ -75,11 +75,6 @@ export default ({
       yield put({
         type: requestSuccess(type),
         payload,
-      });
-
-      yield put({
-        type: SET_IS_404,
-        payload: false,
       });
 
       if (resolve) {
