@@ -1,0 +1,28 @@
+@import "variables";
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  line-height: 1.5;
+}
+
+body {
+  font-family: $body-font;
+}
+
+body.fontLoaded {
+  font-family: $body-font;
+}
+
+#app {
+  background-color: #fafafa;
+  height: 100%;
+  min-width: 100%;
+}
+
+p,
+label {
+  font-family: $body-font;
+  line-height: 1.5em;
+}

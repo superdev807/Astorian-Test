@@ -1,0 +1,2 @@
+export const STORE_URL_MATCH = "STORE_URL_MATCH";
+export const GET_URL_MATCH_LIST = "GET_URL_MATCH_LIST";
