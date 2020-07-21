@@ -4,6 +4,7 @@ import { detectScreen } from "redux/actions";
 import debounce from "lodash/debounce";
 
 import Header from "components/Header";
+import UrlShortenerPage from "containers/UrlShortenerPage";
 import styles from "./styles.module.scss";
 
 function App() {
@@ -21,16 +22,9 @@ function App() {
 
   return (
     <div className={styles.app}>
+      <Header />
       <div className={styles.content}>
-        <div
-          style={{
-            width: "100%",
-            backgroundColor: "#ff9939",
-          }}
-        >
-          asdf
-        </div>
-        <Header />
+        <UrlShortenerPage />
       </div>
     </div>
   );
