@@ -1,0 +1,28 @@
+@import "src/styles/mixins.scss";
+@import "src/styles/variables.scss";
+
+.formButton {
+  font-family: Arial;
+  font-style: normal;
+  font-weight: bold;
+  color: #ffffff;
+  font-size: 13px;
+  line-height: 130%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #3274ef;
+  border: none;
+  height: 42px;
+  margin-top: 6px;
+
+  @include respond-to("sm") {
+    width: 21.4%;
+    margin-bottom: 24px;
+  }
+}
+
+.formIcon {
+  margin-right: 8px;
+}

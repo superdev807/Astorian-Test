@@ -4,9 +4,17 @@
 .aliasInput {
   width: 100%;
   margin-right: 0px;
-
   @include respond-to("sm") {
     width: 76.6%;
     margin-right: 2%;
+  }
+}
+
+.aliasContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  @include respond-to("sm") {
+    flex-direction: row;
   }
 }
