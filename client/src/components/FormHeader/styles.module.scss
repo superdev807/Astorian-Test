@@ -13,8 +13,11 @@
   font-size: 22px;
   line-height: 130%;
   margin-bottom: 24px;
+  text-align: left;
+
   @include respond-to("sm") {
     font-size: 38px;
     margin-bottom: 44px;
+    text-align: center;
   }
 }

@@ -1,0 +1,12 @@
+@import "src/styles/mixins.scss";
+@import "src/styles/variables.scss";
+
+.aliasInput {
+  width: 100%;
+  margin-right: 0px;
+
+  @include respond-to("sm") {
+    width: 76.6%;
+    margin-right: 2%;
+  }
+}
