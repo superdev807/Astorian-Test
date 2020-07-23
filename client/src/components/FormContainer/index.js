@@ -4,5 +4,7 @@ import classNames from "classnames/bind";
 let cx = classNames.bind(styles);
 
 export default function FormContainer({ children, className }) {
-  return <div className={cx(styles.formContainer, className)}>{children}</div>;
+  return (
+    <form className={cx(styles.formContainer, className)}>{children}</form>
+  );
 }

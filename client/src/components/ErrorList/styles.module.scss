@@ -1,0 +1,34 @@
+@import "src/styles/mixins.scss";
+@import "src/styles/variables.scss";
+
+.normalTextBox {
+  margin-bottom: 8px;
+}
+
+.errorList {
+  margin-top: 24px;
+  @include respond-to("sm") {
+    margin-top: 8px;
+    margin-bottom: 24px;
+  }
+}
+
+.defaultText {
+  font-family: Arial;
+  font-style: normal;
+  margin: 0px 0px 8px 0px;
+}
+
+.errorTitle {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 130%;
+  color: #303032;
+}
+
+.errorText {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 160%;
+  color: #d91b03;
+}

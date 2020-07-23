@@ -18,3 +18,9 @@
     flex-direction: row;
   }
 }
+
+.errorContainer {
+  @include respond-to("sm") {
+    border: 1px solid #d91b03;
+  }
+}
