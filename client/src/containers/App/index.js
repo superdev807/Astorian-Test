@@ -7,6 +7,8 @@ import debounce from "lodash/debounce";
 
 import Header from "components/Header";
 import UrlShortenerPage from "containers/UrlShortenerPage";
+import SuccessPage from "containers/SuccessPage";
+
 import styles from "./styles.module.scss";
 
 const history = createBrowserHistory();
@@ -31,6 +33,7 @@ function App() {
         <Router history={history}>
           <Switch>
             <Route exact path="/" component={UrlShortenerPage} />
+            <Route exact path="/success" component={SuccessPage} />
             <Route path="" component={() => <div>Page Not Found</div>} />
           </Switch>
         </Router>

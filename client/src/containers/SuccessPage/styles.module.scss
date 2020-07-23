@@ -1,0 +1,10 @@
+@import "src/styles/mixins.scss";
+@import "src/styles/variables.scss";
+
+.successFormInput {
+  margin-bottom: 8px;
+
+  @include respond-to("sm") {
+    margin-bottom: 11px;
+  }
+}

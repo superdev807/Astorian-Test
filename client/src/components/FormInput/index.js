@@ -5,12 +5,19 @@ import styles from "./styles.module.scss";
 export default function FormInput({
   labelText = "",
   placeHolder = "",
+  inputId = "input",
+  handleChange,
   className,
 }) {
   return (
-    <div className={cx(className, styles.formInput)}>
+    <div className={cx(styles.formInput, className)}>
       {labelText && <label>{labelText}</label>}
-      <input type="text" placeholder={placeHolder} />
+      <input
+        type="text"
+        placeholder={placeHolder}
+        onChange={handleChange}
+        id={inputId}
+      />
     </div>
   );
 }
