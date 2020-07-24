@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { detectScreen } from "redux/actions";
-import { Router, Route, Switch } from "react-router";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { createBrowserHistory } from "history";
 import debounce from "lodash/debounce";
 
@@ -24,7 +24,7 @@ function App() {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className={styles.app}>
@@ -34,7 +34,6 @@ function App() {
           <Switch>
             <Route exact path="/" component={UrlShortenerPage} />
             <Route exact path="/success" component={SuccessPage} />
-            <Route path="" component={() => <div>Page Not Found</div>} />
           </Switch>
         </Router>
       </div>

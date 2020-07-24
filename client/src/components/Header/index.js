@@ -10,7 +10,11 @@ const Header = () => {
 
   return (
     <div className={styles.headerWrapper}>
-      {isDesktop ? <img src={logoDesktop} /> : <img src={logoMobile} />}
+      {isDesktop ? (
+        <img src={logoDesktop} alt="logo-desktop" />
+      ) : (
+        <img src={logoMobile} alt="logo-mobile" />
+      )}
     </div>
   );
 };

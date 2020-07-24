@@ -1,11 +1,11 @@
 import * as types from "../constants";
-import { createActions } from "redux-actions";
 
-export function storeUrlMatch({ longUrl, shortUrl }) {
+export function storeUrlMatch({ data }) {
   return {
     type: types.STORE_URL_MATCH,
-    longUrl,
-    shortUrl,
+    payload: {
+      data: data,
+    },
   };
 }
 

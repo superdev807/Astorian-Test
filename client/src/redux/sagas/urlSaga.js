@@ -1,13 +1,4 @@
-import {
-  cancel,
-  cancelled,
-  call,
-  select,
-  take,
-  takeLatest,
-  put,
-  fork,
-} from "redux-saga/effects";
+import { takeLatest, put } from "redux-saga/effects";
 
 import {
   STORE_URL_MATCH,

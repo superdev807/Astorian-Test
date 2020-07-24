@@ -1,5 +1,3 @@
-"use strict";
-
 export const API_PENDING = "pending";
 
 export const API_SUCCESS = "success";
