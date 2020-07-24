@@ -1,6 +1,5 @@
 import axios from "axios";
 import { call, put } from "redux-saga/effects";
-import get from "lodash/get";
 
 import { requestFail, requestPending, requestSuccess } from "./request";
 
@@ -60,7 +59,7 @@ export default ({
         headers: finalHeaders,
         data,
         params: { ...sagaParams, ...params },
-        baseURL: baseURL || process.env.LOYALTY_AUTH_API_HOST,
+        baseURL: baseURL || process.env.REACT_APP_URL_MANAGE_HOST,
         onUploadProgress,
         onDownloadProgress,
         responseType,
@@ -90,9 +89,7 @@ export default ({
     } catch (err) {
       let errRes = err;
       if (err.response) {
-        errRes = new Error(get(err, "response.data.message", "Error"));
-        errRes.fieldErrors = get(err, "response.data.fieldErrors");
-        errRes.errorCode = get(err, "response.data.errorCode");
+        errRes = err.response;
       }
 
       const payload = payloadOnFail ? payloadOnFail(errRes, action) : errRes;

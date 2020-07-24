@@ -1,28 +1,16 @@
 import { takeLatest, put } from "redux-saga/effects";
 
-import {
-  STORE_URL_MATCH,
-  GET_URL_MATCH_LIST,
-  DETECT_SCREEN,
-} from "../constants";
+import { STORE_URL_MATCH, DETECT_SCREEN } from "../constants";
 import apiCall from "../api/call";
 import { BREAKPOINTS } from "utils/constants";
 import { setScreen } from "../actions";
 
-export const getUrlMapList = apiCall({
-  type: GET_URL_MATCH_LIST,
-  method: "get",
-  baseURL: process.env.URL_MANAGE_HOST,
-  path: () => "urls",
-  payloadOnSuccess: ({ data }) => data,
-});
-
 export const storeUrlMatch = apiCall({
   type: STORE_URL_MATCH,
   method: "post",
-  baseURL: process.env.URL_MANAGE_HOST,
   path: () => "store",
-  payloadOnSuccess: ({ data }) => data,
+  payloadOnSuccess: (data) => data,
+  payloadOnFail: ({ data }) => data,
 });
 
 export function* setDeviceScreen() {
@@ -32,7 +20,6 @@ export function* setDeviceScreen() {
 }
 
 export default function* rootSaga() {
-  yield takeLatest(GET_URL_MATCH_LIST, getUrlMapList);
   yield takeLatest(STORE_URL_MATCH, storeUrlMatch);
   yield takeLatest(DETECT_SCREEN, setDeviceScreen);
 }

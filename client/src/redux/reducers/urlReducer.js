@@ -6,6 +6,7 @@ import {
   API_FAIL,
   API_PENDING,
   requestSuccess,
+  API_SUCCESS,
 } from "../api/request";
 import { setCookie } from "utils/cookie";
 
@@ -31,11 +32,20 @@ const urlManageReducer = (state = initialState, action) =>
         draft.apiState = API_PENDING;
         break;
       case requestSuccess(types.STORE_URL_MATCH):
-        if (action.payload.urlMap) setCookie("urlMap", action.payload.urlMap);
+        draft.apiState = API_SUCCESS;
+        if (action.payload && action.payload.long_url && action.payload.alias)
+          setCookie(
+            "urlMap",
+            JSON.stringify({
+              long_url: action.payload.long_url,
+              alias: action.payload.alias,
+            })
+          );
         break;
       case requestFail(types.STORE_URL_MATCH):
         draft.apiState = API_FAIL;
-        draft.errors = action.payload.errors ? action.payload.errors : [];
+        draft.errors =
+          action.payload && action.payload.errors ? action.payload.errors : [];
         break;
       default:
         break;

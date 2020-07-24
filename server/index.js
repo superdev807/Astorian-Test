@@ -2,21 +2,26 @@ const createError = require("http-errors");
 const express = require("express");
 const logger = require("morgan");
 const bodyParser = require("body-parser");
-const http = require("http");
-const mysql = require("mysql");
+const urlManageRoute = require("./routes");
+const cors = require("cors");
+
 const app = express();
 
 app.use(logger("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cors());
 
-app.get("*", (req, res) =>
-  res.status(200).send({
-    message: "Welcome to the beginning of nothingness.",
+const models = require("./models");
+models.sequelize
+  .sync()
+  .then(function () {
+    console.log("Database connection is fine");
   })
-);
+  .catch(function (error) {
+    console.log(error, "Something went wrong with the Database");
+  });
+
+app.use("/", urlManageRoute);
 const port = parseInt(process.env.PORT, 10) || 8000;
-app.set("port", port);
-const server = http.createServer(app);
-server.listen(port);
-module.exports = app;
+app.listen(port, () => console.log(`Server up and running on port ${port}`));
