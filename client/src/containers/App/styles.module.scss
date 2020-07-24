@@ -19,6 +19,7 @@
   flex-direction: column;
   margin-top: 46px;
   align-items: center;
+
   @include respond-to("sm") {
     margin-top: 67px;
     justify-content: center;

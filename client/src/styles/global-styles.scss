@@ -8,16 +8,20 @@ body {
 
 body {
   font-family: $body-font;
+  font-style: normal;
   margin: 0px;
   background-color: $ps-orange;
+  font-style: normal;
 }
 
 body.fontLoaded {
   font-family: $body-font;
+  font-style: normal;
 }
 
 #root {
   background-color: #fafafa;
+  font-family: $body-font;
   height: 100%;
   min-width: 100%;
 }

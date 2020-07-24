@@ -7,16 +7,20 @@ export default function FormInput({
   placeHolder = "",
   inputId = "input",
   handleChange,
+  disabled = false,
+  defaultValue = "",
   className,
 }) {
   return (
     <div className={cx(styles.formInput, className)}>
       {labelText && <label>{labelText}</label>}
       <input
+        id={inputId}
         type="text"
         placeholder={placeHolder}
         onChange={handleChange}
-        id={inputId}
+        disabled={disabled}
+        defaultValue={defaultValue}
       />
     </div>
   );

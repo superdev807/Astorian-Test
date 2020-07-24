@@ -1,0 +1,33 @@
+@import "src/styles/mixins.scss";
+@import "src/styles/variables.scss";
+
+.labelTitle {
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 160%;
+
+  @include respond-to("sm") {
+    font-size: 14px;
+    line-height: 130%;
+    margin-right: 4px;
+  }
+}
+
+.labelText {
+  font-size: 12px;
+  line-height: 160%;
+
+  @include respond-to("sm") {
+    font-size: 14px;
+  }
+}
+
+.formLabelBox {
+  display: flex;
+  flex-direction: column;
+
+  @include respond-to("sm") {
+    flex-direction: row;
+    align-items: center;
+  }
+}
